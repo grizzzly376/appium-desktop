@@ -46,7 +46,7 @@ export default class Inspector extends Component {
   render () {
     const {screenshot, screenshotError, selectedElement = {},
       applyClientMethod, quitSession, isRecording, showRecord, startRecording,
-      pauseRecording, showLocatorTestModal, screenshotInteractionMode, 
+      pauseRecording, showLocatorTestModal, showPerformActionModal, screenshotInteractionMode, 
       showKeepAlivePrompt, keepSessionAlive} = this.props;
     const {path} = selectedElement;
 
@@ -120,6 +120,9 @@ export default class Inspector extends Component {
            <Button id='btnPause' icon="pause" type="danger" onClick={pauseRecording}/>
          </Tooltip>
         }
+        <Tooltip title="Perform an Action">
+           <Button id='performAction' icon="code-o" onClick={showPerformActionModal}/>
+        </Tooltip>
         <Tooltip title="Search for element">
            <Button id='searchForElement' icon="search" onClick={showLocatorTestModal}/>
         </Tooltip>
